@@ -6,12 +6,10 @@ const MobileMenu = ({ isOpen, onClose, navItems }) => {
 
   const handleNavClick = (href) => {
     onClose();
-    setTimeout(() => {
-      const element = document.querySelector(href);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
-    }, 100);
+    const element = document.querySelector(href);
+    if (element) {
+      element.scrollIntoView({ behavior: 'auto', block: 'start' });
+    }
   };
 
   return (

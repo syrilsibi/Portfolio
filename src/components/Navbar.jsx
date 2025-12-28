@@ -53,12 +53,10 @@ const Navbar = () => {
 
   const handleNavClick = useCallback((href) => {
     close();
-    setTimeout(() => {
-      const element = document.querySelector(href);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
-    }, 100);
+    const element = document.querySelector(href);
+    if (element) {
+      element.scrollIntoView({ behavior: 'auto', block: 'start' });
+    }
   }, [close]);
 
   return (

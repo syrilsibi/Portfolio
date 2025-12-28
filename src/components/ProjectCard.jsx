@@ -1,23 +1,8 @@
-import { motion, useReducedMotion } from 'framer-motion';
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 
 const ProjectCard = ({ project, featured = false, index = 0 }) => {
-  const shouldReduceMotion = useReducedMotion();
-
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 12 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-50px' }}
-      transition={{ 
-        duration: 0.4, 
-        ease: 'easeOut',
-        delay: index * 0.05 
-      }}
-      whileHover={shouldReduceMotion ? {} : { 
-        y: -2,
-        transition: { duration: 0.25, ease: 'easeOut' }
-      }}
+    <div
       className={`bg-white/5 border border-white/5 rounded-lg px-3 py-2 hover:border-cyan-500/30 hover:bg-white/10 transition-all duration-200 group ${
         featured ? 'md:col-span-2 lg:col-span-2' : ''
       }`}
@@ -72,7 +57,7 @@ const ProjectCard = ({ project, featured = false, index = 0 }) => {
           </a>
         )}
       </div>
-    </motion.div>
+    </div>
   );
 };
 

@@ -1,4 +1,3 @@
-import { motion, useReducedMotion } from 'framer-motion';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import { skills } from '../data/skills';
 import SkillPill from '../components/SkillPill';
@@ -6,7 +5,6 @@ import SkillCard from '../components/SkillCard';
 
 const Skills = () => {
   const [ref, isVisible] = useScrollAnimation({ threshold: 0.1 });
-  const shouldReduceMotion = useReducedMotion();
 
   // Pill-style categories (programming languages & ML algorithms)
   const pillCategories = [
@@ -40,12 +38,9 @@ const Skills = () => {
   return (
     <section id="skills" className="py-8 md:py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
-        <motion.div
+        <div
           ref={ref}
-          initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 12 }}
-          animate={isVisible ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: shouldReduceMotion ? 0.1 : 0.5, ease: 'easeOut' }}
-          className="text-center mb-6 md:mb-10"
+          className={`text-center mb-6 md:mb-10 transition-opacity duration-500 ${isVisible ? 'opacity-100' : 'opacity-0'}`}
         >
           <h2 className="text-3xl md:text-4xl font-semibold mb-1.5 md:mb-2 bg-gradient-to-r from-cyan-500 to-teal-500 bg-clip-text text-transparent">
             🛠️ Skills
@@ -53,11 +48,11 @@ const Skills = () => {
           <p className="text-slate-400 text-xs max-w-xl mx-auto">
             Technologies and tools I work with to bring ideas to life
           </p>
-        </motion.div>
+        </div>
 
         <div className="space-y-5 md:space-y-8">
           {/* Pill-style sections */}
-          {pillCategories.map((category, categoryIndex) => (
+          {pillCategories.map((category) => (
             <div
               key={category.title}
               className="space-y-1.5"
@@ -82,7 +77,7 @@ const Skills = () => {
           ))}
 
           {/* Card-style sections */}
-          {cardCategories.map((category, categoryIndex) => (
+          {cardCategories.map((category) => (
             <div
               key={category.title}
               className="space-y-1.5"

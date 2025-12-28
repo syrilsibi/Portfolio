@@ -31,7 +31,7 @@ const Button = ({
       e.preventDefault();
       const element = document.querySelector(href);
       if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
+        element.scrollIntoView({ behavior: 'auto', block: 'start' });
       }
     }
   };

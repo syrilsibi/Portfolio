@@ -1,18 +1,14 @@
-import { motion, useReducedMotion } from 'framer-motion';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 const About = () => {
   const [ref, isVisible] = useScrollAnimation({ threshold: 0.2 });
-  const shouldReduceMotion = useReducedMotion();
 
   return (
     <section id="about" className="py-8 md:py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-3xl mx-auto">
-        <motion.div
+        <div
           ref={ref}
-          initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 12 }}
-          animate={isVisible ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: shouldReduceMotion ? 0.1 : 0.5, ease: 'easeOut' }}
+          className={`transition-opacity duration-500 ${isVisible ? 'opacity-100' : 'opacity-0'}`}
         >
           <h2 className="text-3xl md:text-4xl font-semibold mb-4 md:mb-5 bg-gradient-to-r from-cyan-500 to-teal-500 bg-clip-text text-transparent">
             🧠 About Me
@@ -46,7 +42,7 @@ const About = () => {
               machine learning.
             </p>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );
