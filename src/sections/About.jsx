@@ -6,7 +6,7 @@ const About = () => {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <section id="about" className="py-12 md:py-20 px-4 sm:px-6 lg:px-8">
+    <section id="about" className="py-8 md:py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-3xl mx-auto">
         <motion.div
           ref={ref}
@@ -14,11 +14,11 @@ const About = () => {
           animate={isVisible ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: shouldReduceMotion ? 0.1 : 0.5, ease: 'easeOut' }}
         >
-          <h2 className="text-3xl md:text-4xl font-semibold mb-5 bg-gradient-to-r from-cyan-500 to-teal-500 bg-clip-text text-transparent">
+          <h2 className="text-3xl md:text-4xl font-semibold mb-4 md:mb-5 bg-gradient-to-r from-cyan-500 to-teal-500 bg-clip-text text-transparent">
             🧠 About Me
           </h2>
           
-          <div className="space-y-3 text-sm text-slate-400 leading-relaxed">
+          <div className="space-y-2.5 md:space-y-3 text-sm text-slate-400 leading-relaxed">
             <p>
               I'm an MCA student with a passion for machine learning and artificial intelligence. 
               Currently working as a Machine Learning Engineer Intern at SkillPark, where I'm 

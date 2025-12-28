@@ -8,8 +8,8 @@ const TimelineItem = ({ item, index }) => {
 
   return (
     <motion.div
-      initial={{ opacity: 0, x: shouldReduceMotion ? 0 : -12, y: shouldReduceMotion ? 0 : 12 }}
-      whileInView={{ opacity: 1, x: 0, y: 0 }}
+      initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 12 }}
+      whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-50px' }}
       transition={{ 
         duration: shouldReduceMotion ? 0.1 : 0.4, 
@@ -17,7 +17,7 @@ const TimelineItem = ({ item, index }) => {
         delay: shouldReduceMotion ? 0 : index * 0.06 
       }}
       whileHover={shouldReduceMotion ? {} : { y: -2 }}
-      className="relative pl-4 sm:pl-5 pb-4 sm:pb-5 border-l border-white/5 last:border-0 last:pb-0"
+      className="relative pl-4 sm:pl-5 pb-3 sm:pb-5 border-l border-white/5 last:border-0 last:pb-0"
     >
       <div className="absolute -left-[7px] top-0 w-3 h-3 rounded-full bg-[#0b0f14] border border-cyan-500/50 flex items-center justify-center">
         <Icon className="w-1.5 h-1.5 text-cyan-400/70" />

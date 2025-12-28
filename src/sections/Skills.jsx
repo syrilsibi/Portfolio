@@ -38,16 +38,16 @@ const Skills = () => {
   ];
 
   return (
-    <section id="skills" className="py-12 md:py-20 px-4 sm:px-6 lg:px-8">
+    <section id="skills" className="py-8 md:py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 12 }}
           animate={isVisible ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: shouldReduceMotion ? 0.1 : 0.5, ease: 'easeOut' }}
-          className="text-center mb-8 md:mb-10"
+          className="text-center mb-6 md:mb-10"
         >
-          <h2 className="text-3xl md:text-4xl font-semibold mb-2 bg-gradient-to-r from-cyan-500 to-teal-500 bg-clip-text text-transparent">
+          <h2 className="text-3xl md:text-4xl font-semibold mb-1.5 md:mb-2 bg-gradient-to-r from-cyan-500 to-teal-500 bg-clip-text text-transparent">
             🛠️ Skills
           </h2>
           <p className="text-slate-400 text-xs max-w-xl mx-auto">
@@ -55,28 +55,20 @@ const Skills = () => {
           </p>
         </motion.div>
 
-        <div className="space-y-6 md:space-y-8">
+        <div className="space-y-5 md:space-y-8">
           {/* Pill-style sections */}
           {pillCategories.map((category, categoryIndex) => (
-            <motion.div
+            <div
               key={category.title}
-              initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 12 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-50px' }}
-              transition={{ 
-                duration: shouldReduceMotion ? 0.1 : 0.4, 
-                delay: shouldReduceMotion ? 0 : categoryIndex * 0.04, 
-                ease: 'easeOut' 
-              }}
-              className="space-y-2"
+              className="space-y-1.5"
             >
-              <div className="flex items-center gap-3 mb-2 md:mb-3">
+              <div className="flex items-center gap-2 md:gap-3 mb-1.5 md:mb-3">
                 <h3 className="text-xs font-medium tracking-widest uppercase text-slate-400">
                   {category.title}
                 </h3>
                 <div className="flex-1 h-px bg-white/5"></div>
               </div>
-              <div className="flex flex-wrap gap-1.5">
+              <div className="flex flex-wrap gap-1">
                 {category.skills.map((skill, index) => (
                   <SkillPill
                     key={skill.name}
@@ -86,30 +78,22 @@ const Skills = () => {
                   />
                 ))}
               </div>
-            </motion.div>
+            </div>
           ))}
 
           {/* Card-style sections */}
           {cardCategories.map((category, categoryIndex) => (
-            <motion.div
+            <div
               key={category.title}
-              initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 12 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-50px' }}
-              transition={{ 
-                duration: shouldReduceMotion ? 0.1 : 0.4, 
-                delay: shouldReduceMotion ? 0 : (pillCategories.length + categoryIndex) * 0.04, 
-                ease: 'easeOut' 
-              }}
-              className="space-y-2"
+              className="space-y-1.5"
             >
-              <div className="flex items-center gap-3 mb-2 md:mb-3">
+              <div className="flex items-center gap-2 md:gap-3 mb-1.5 md:mb-3">
                 <h3 className="text-xs font-medium tracking-widest uppercase text-slate-400">
                   {category.title}
                 </h3>
                 <div className="flex-1 h-px bg-white/5"></div>
               </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-1.5 md:gap-2">
                 {category.skills.map((skill, index) => (
                   <SkillCard
                     key={skill.name}
@@ -118,7 +102,7 @@ const Skills = () => {
                   />
                 ))}
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

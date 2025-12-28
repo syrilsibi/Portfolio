@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { motion } from 'framer-motion';
 import { FaBars } from 'react-icons/fa';
 import { useMobileMenu } from '../hooks/useMobileMenu';
@@ -21,29 +21,37 @@ const Navbar = () => {
   ];
 
   useEffect(() => {
+    let ticking = false;
+
     const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setScrolled(window.scrollY > 20);
 
-      const sections = navItems.map(item => item.href.substring(1));
-      const current = sections.find(section => {
-        const element = document.getElementById(section);
-        if (element) {
-          const rect = element.getBoundingClientRect();
-          return rect.top <= 100 && rect.bottom >= 100;
-        }
-        return false;
-      });
+          const sections = navItems.map(item => item.href.substring(1));
+          const current = sections.find(section => {
+            const element = document.getElementById(section);
+            if (element) {
+              const rect = element.getBoundingClientRect();
+              return rect.top <= 100 && rect.bottom >= 100;
+            }
+            return false;
+          });
 
-      setActiveSection(current ? `#${current}` : '');
+          setActiveSection(current ? `#${current}` : '');
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     handleScroll();
 
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleNavClick = (href) => {
+  const handleNavClick = useCallback((href) => {
     close();
     setTimeout(() => {
       const element = document.querySelector(href);
@@ -51,7 +59,7 @@ const Navbar = () => {
         element.scrollIntoView({ behavior: 'smooth' });
       }
     }, 100);
-  };
+  }, [close]);
 
   return (
     <>
@@ -59,12 +67,12 @@ const Navbar = () => {
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.4, ease: 'easeOut' }}
-        className={`fixed top-0 left-0 right-0 z-30 transition-all duration-300 ${
+        className={`fixed top-0 left-0 right-0 z-30 transition-all duration-300 h-16 md:h-20 ${
           scrolled ? 'bg-[#0b0f14]/60 backdrop-blur-sm border-b border-white/5' : 'bg-transparent'
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16 md:h-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
+          <div className="flex items-center justify-between h-full">
             <motion.a
               href="#hero"
               onClick={(e) => {
@@ -110,7 +118,7 @@ const Navbar = () => {
 
             <button
               onClick={toggle}
-              className="lg:hidden p-2 rounded-lg hover:bg-white/10 transition-colors"
+              className="lg:hidden p-2 rounded-lg hover:bg-white/10 transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center"
               aria-label="Toggle menu"
             >
               <FaBars className="w-6 h-6 text-slate-200" />

@@ -9,7 +9,7 @@ const Contact = () => {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <section id="contact" className="py-12 md:py-20 px-4 sm:px-6 lg:px-8">
+    <section id="contact" className="py-8 md:py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-2xl mx-auto">
         <motion.div
           ref={ref}
@@ -18,17 +18,17 @@ const Contact = () => {
           transition={{ duration: shouldReduceMotion ? 0.1 : 0.5, ease: 'easeOut' }}
           className="text-center"
         >
-          <h2 className="text-3xl md:text-4xl font-semibold mb-5 bg-gradient-to-r from-cyan-500 to-teal-500 bg-clip-text text-transparent">
+          <h2 className="text-3xl md:text-4xl font-semibold mb-4 md:mb-5 bg-gradient-to-r from-cyan-500 to-teal-500 bg-clip-text text-transparent">
             📬 Contact
           </h2>
           
-          <p className="text-xs text-slate-400 mb-6 leading-relaxed">
+          <p className="text-xs text-slate-400 mb-5 md:mb-6 leading-relaxed">
             I'm always open to discussing new opportunities, interesting projects, 
             or just having a conversation about machine learning and technology. 
             Feel free to reach out!
           </p>
 
-          <div className="mb-6 space-y-2">
+          <div className="mb-5 md:mb-6 space-y-1.5 md:space-y-2">
             <p className="text-xs text-slate-300">
               <span className="text-cyan-400/80">Location:</span> {personal.location}
             </p>
@@ -68,7 +68,7 @@ const Contact = () => {
             initial={{ opacity: 0 }}
             animate={isVisible ? { opacity: 1 } : {}}
             transition={{ delay: shouldReduceMotion ? 0 : 0.3, duration: shouldReduceMotion ? 0.1 : 0.4 }}
-            className="text-slate-500 mt-8 text-xs"
+            className="text-slate-500 mt-6 md:mt-8 text-xs"
           >
             I typically respond within 24-48 hours
           </motion.p>

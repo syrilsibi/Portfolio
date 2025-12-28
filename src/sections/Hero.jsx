@@ -72,8 +72,8 @@ const Hero = () => {
       </div>
 
       {/* Content - Mobile-first optimized */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 md:pt-32 pb-12 md:pb-20">
-        <div className="flex flex-col items-center justify-center gap-8 md:flex-row md:items-center md:justify-between md:gap-12">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 md:pt-32 pb-8 md:pb-20">
+        <div className="flex flex-col items-center justify-center gap-6 md:flex-row md:items-center md:justify-between md:gap-12">
           {/* Text Content - Mobile optimized */}
           <div className="flex-1 text-center md:text-left w-full">
             <motion.div
@@ -83,7 +83,7 @@ const Hero = () => {
             >
               <motion.h1
                 variants={itemVariants}
-                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-semibold mb-4 md:mb-6"
+                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-semibold mb-3 md:mb-6"
               >
                 <span className="block text-slate-200">Hi, I'm Syril 👋</span>
                 <span className="block bg-gradient-to-r from-cyan-500 to-teal-500 bg-clip-text text-transparent mt-1 md:mt-2">Syril Sibi</span>
@@ -91,21 +91,21 @@ const Hero = () => {
 
               <motion.p
                 variants={itemVariants}
-                className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-slate-400 mb-3 md:mb-4 font-medium"
+                className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-slate-400 mb-2 md:mb-4 font-medium"
               >
                 Machine Learning Engineer Intern 🤖
               </motion.p>
 
               <motion.p
                 variants={itemVariants}
-                className="text-sm sm:text-base md:text-lg text-slate-400 mb-8 md:mb-12 max-w-2xl mx-auto md:mx-0 leading-relaxed"
+                className="text-sm sm:text-base md:text-lg text-slate-400 mb-6 md:mb-12 max-w-2xl mx-auto md:mx-0 leading-relaxed"
               >
                 Building intelligent systems with Python, Django & Deep Learning 🧠
               </motion.p>
 
               <motion.div
                 variants={itemVariants}
-                className="flex flex-col gap-3 w-full sm:flex-row sm:justify-center md:justify-start sm:w-auto"
+                className="flex flex-col gap-2.5 w-full sm:flex-row sm:justify-center md:justify-start sm:w-auto"
               >
                 <Button
                   href="#projects"
@@ -138,7 +138,7 @@ const Hero = () => {
 
           {/* Animated Character - Below on mobile, side on desktop */}
           <div className="flex-1 flex justify-center md:justify-end w-full md:w-auto order-first md:order-last">
-            <div className="w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80">
+            <div className="w-40 h-40 sm:w-56 sm:h-56 md:w-80 md:h-80">
               <AnimatedCharacter />
             </div>
           </div>

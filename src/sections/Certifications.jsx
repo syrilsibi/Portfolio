@@ -7,16 +7,16 @@ const Certifications = () => {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <section id="certifications" className="py-12 md:py-20 px-4 sm:px-6 lg:px-8">
+    <section id="certifications" className="py-8 md:py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-5xl mx-auto">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 12 }}
           animate={isVisible ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: shouldReduceMotion ? 0.1 : 0.5, ease: 'easeOut' }}
-          className="text-center mb-8 md:mb-10"
+          className="text-center mb-6 md:mb-10"
         >
-          <h2 className="text-3xl md:text-4xl font-semibold mb-2 bg-gradient-to-r from-cyan-500 to-teal-500 bg-clip-text text-transparent">
+          <h2 className="text-3xl md:text-4xl font-semibold mb-1.5 md:mb-2 bg-gradient-to-r from-cyan-500 to-teal-500 bg-clip-text text-transparent">
             📜 Certifications
           </h2>
           <p className="text-slate-400 text-xs max-w-xl mx-auto">
@@ -24,7 +24,7 @@ const Certifications = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1.5 md:gap-2">
           {certifications.map((cert, index) => (
             <motion.div
               key={cert.id}

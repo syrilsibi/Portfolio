@@ -5,14 +5,6 @@ const SkillPill = ({ skill, index, isCore = false }) => {
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 12 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ 
-        duration: 0.4, 
-        ease: 'easeOut',
-        delay: index * 0.03 
-      }}
       whileHover={shouldReduceMotion ? {} : { 
         y: -2,
         transition: { duration: 0.25, ease: 'easeOut' }
