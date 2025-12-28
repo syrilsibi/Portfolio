@@ -5,7 +5,7 @@ export const projects = [
     description: 'Real-time fire detection using YOLOv8. Live video analysis using OpenCV. Dataset preprocessing and model training. Email and alarm alert generation.',
     techStack: ['Python', 'Django', 'YOLOv8', 'OpenCV'],
     featured: true,
-    github: '#',
+    github: 'https://github.com/syrilsibi/Fire_detection_system_prototype',
     demo: '#',
   },
   {
