@@ -52,7 +52,7 @@ const Hero = () => {
                   💼 LinkedIn
                 </Button>
                 <Button
-                  href="#"
+                  href="/SYRIL SIBI.pdf"
                   variant="outline"
                   external
                   icon={FaFileDownload}
