@@ -8,6 +8,8 @@ export const useMobileMenu = () => {
   const open = () => setIsOpen(true);
 
   useEffect(() => {
+    if (typeof document === 'undefined') return;
+
     if (isOpen) {
       document.body.style.overflow = 'hidden';
     } else {
@@ -15,10 +17,11 @@ export const useMobileMenu = () => {
     }
 
     return () => {
-      document.body.style.overflow = 'unset';
+      if (typeof document !== 'undefined') {
+        document.body.style.overflow = 'unset';
+      }
     };
   }, [isOpen]);
 
   return { isOpen, toggle, close, open };
 };
-

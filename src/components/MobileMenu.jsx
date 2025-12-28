@@ -6,9 +6,11 @@ const MobileMenu = ({ isOpen, onClose, navItems }) => {
 
   const handleNavClick = (href) => {
     onClose();
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: 'auto', block: 'start' });
+    if (typeof window !== 'undefined' && typeof document !== 'undefined') {
+      const element = document.querySelector(href);
+      if (element) {
+        element.scrollIntoView({ behavior: 'auto', block: 'start' });
+      }
     }
   };
 

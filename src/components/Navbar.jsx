@@ -21,6 +21,8 @@ const Navbar = () => {
   ];
 
   useEffect(() => {
+    if (typeof window === 'undefined') return;
+
     let ticking = false;
 
     const handleScroll = () => {
@@ -48,14 +50,18 @@ const Navbar = () => {
     window.addEventListener('scroll', handleScroll, { passive: true });
     handleScroll();
 
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [navItems]);
 
   const handleNavClick = useCallback((href) => {
     close();
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: 'auto', block: 'start' });
+    if (typeof window !== 'undefined' && typeof document !== 'undefined') {
+      const element = document.querySelector(href);
+      if (element) {
+        element.scrollIntoView({ behavior: 'auto', block: 'start' });
+      }
     }
   }, [close]);
 

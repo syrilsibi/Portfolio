@@ -5,6 +5,11 @@ export const useScrollAnimation = (options = {}) => {
   const ref = useRef(null);
 
   useEffect(() => {
+    if (typeof window === 'undefined' || typeof IntersectionObserver === 'undefined') {
+      setIsVisible(true);
+      return;
+    }
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -35,4 +40,3 @@ export const useScrollAnimation = (options = {}) => {
 
   return [ref, isVisible];
 };
-
