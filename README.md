@@ -11,6 +11,15 @@ A modern, ambient-dark developer portfolio showcasing work as a Machine Learning
 - **Lenis** - Smooth scrolling
 - **React Icons** - Icon library
 
+## 🌐 Live Site
+
+👉 https://<your-vercel-link>
+
+## 📬 Contact
+
+- **LinkedIn**: https://linkedin.com/in/syril-sibi-37a823261
+- **Email**: Syrilsibicontact@gmail.com
+
 ## 📦 Installation
 
 1. Clone the repository or navigate to the project directory
