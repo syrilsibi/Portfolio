@@ -1,0 +1,14 @@
+OG Image Placeholder
+=====================
+
+Create an OG image (og-image.png) at 1200x630px for LinkedIn preview.
+
+Recommended design:
+- Dark ambient background (#0b0f14)
+- Name: "Syril Sibi" in gradient (cyan to teal)
+- Title: "Machine Learning Engineer Intern"
+- Subtle ML/tech visual elements
+- Professional, calm aesthetic
+
+Place the final image at: public/og-image.png
+

@@ -1,0 +1,38 @@
+export const projects = [
+  {
+    id: 1,
+    title: 'Fire Detection System',
+    description: 'Real-time fire detection using YOLOv8. Live video analysis using OpenCV. Dataset preprocessing and model training. Email and alarm alert generation.',
+    techStack: ['Python', 'Django', 'YOLOv8', 'OpenCV'],
+    featured: true,
+    github: '#',
+    demo: '#',
+  },
+  {
+    id: 2,
+    title: 'Food Card (NGO Platform)',
+    description: 'Django-based NGO website connecting donors with people in need.',
+    techStack: ['Django', 'Python', 'HTML', 'CSS'],
+    featured: false,
+    github: '#',
+    demo: '#',
+  },
+  {
+    id: 3,
+    title: 'Guruji Grocery Shop',
+    description: 'Grocery management website.',
+    techStack: ['HTML', 'CSS', 'PHP'],
+    featured: false,
+    github: '#',
+    demo: '#',
+  },
+  {
+    id: 4,
+    title: 'Workshop Management System',
+    description: 'Automobile workshop management system. Includes e-commerce module for auto parts.',
+    techStack: ['HTML', 'CSS', 'PHP'],
+    featured: false,
+    github: '#',
+    demo: '#',
+  },
+];
