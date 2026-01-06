@@ -11,8 +11,8 @@ const Certifications = () => {
           ref={ref}
           className={`text-center mb-6 md:mb-10 transition-opacity duration-500 ${isVisible ? 'opacity-100' : 'opacity-0'}`}
         >
-          <h2 className="text-3xl md:text-4xl font-semibold mb-1.5 md:mb-2 bg-gradient-to-r from-cyan-500 to-teal-500 bg-clip-text text-transparent">
-            📜 Certifications
+          <h2 className="text-3xl md:text-5xl font-display font-medium mb-1.5 md:mb-2 text-slate-100">
+            CERTIFICATIONS<span className="text-acid-lime">.</span>
           </h2>
           <p className="text-slate-400 text-xs max-w-xl mx-auto">
             Professional certifications and achievements
@@ -23,12 +23,12 @@ const Certifications = () => {
           {certifications.map((cert) => (
             <div
               key={cert.id}
-              className="bg-white/5 border border-white/5 rounded-lg px-3 py-2 hover:border-cyan-500/30 hover:bg-white/10 transition-all duration-200"
+              className="bg-white/[0.02] border border-white/5 rounded-xl px-4 py-3 hover:border-acid-lime/30 hover:bg-white/[0.04] transition-all duration-300"
             >
-              <h3 className="text-xs font-semibold text-slate-200 mb-1">
+              <h3 className="text-sm font-semibold text-slate-200 mb-1 group-hover:text-acid-lime transition-colors">
                 {cert.title}
               </h3>
-              <p className="text-xs text-cyan-400/80 font-medium mb-0.5">
+              <p className="text-xs text-slate-400 font-medium mb-0.5">
                 {cert.issuer}
               </p>
               <p className="text-xs text-slate-500">

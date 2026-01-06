@@ -15,8 +15,8 @@ const Projects = () => {
           ref={ref}
           className={`text-center mb-6 md:mb-10 transition-opacity duration-500 ${isVisible ? 'opacity-100' : 'opacity-0'}`}
         >
-          <h2 className="text-3xl md:text-4xl font-semibold mb-1.5 md:mb-2 bg-gradient-to-r from-cyan-500 to-teal-500 bg-clip-text text-transparent">
-            🚀 Projects
+          <h2 className="text-3xl md:text-5xl font-display font-medium mb-1.5 md:mb-2 text-slate-100">
+            PROJECTS<span className="text-acid-lime">.</span>
           </h2>
           <p className="text-slate-400 text-xs max-w-xl mx-auto">
             Featured projects showcasing my work in machine learning and full-stack development

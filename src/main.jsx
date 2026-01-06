@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom/client';
 import App from './App';
 import ErrorBoundary from './components/ErrorBoundary';
 import './styles/globals.css';
+import '@fontsource/syne';
+import '@fontsource/outfit';
 
 const rootElement = document.getElementById('root');
 

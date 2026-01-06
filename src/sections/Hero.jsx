@@ -1,77 +1,95 @@
-import { motion, useReducedMotion } from 'framer-motion';
+import { motion, useReducedMotion, useScroll, useTransform } from 'framer-motion';
 import { FaLinkedin, FaFileDownload } from 'react-icons/fa';
 import Button from '../components/Button';
 import AnimatedCharacter from '../components/AnimatedCharacter';
 
 const Hero = () => {
   const shouldReduceMotion = useReducedMotion();
+  const { scrollY } = useScroll();
+  const y1 = useTransform(scrollY, [0, 500], [0, 200]);
+  const y2 = useTransform(scrollY, [0, 500], [0, -150]);
 
   return (
-    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background gradient orbs - static for performance */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-cyan-500/8 rounded-full blur-3xl" />
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-purple-500/6 rounded-full blur-3xl" />
-        <div className="absolute top-1/2 left-1/2 w-80 h-80 bg-teal-500/5 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
+    <section id="hero" className="relative h-screen flex flex-col justify-center overflow-hidden px-4 md:px-8">
+      {/* Background Atmosphere */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <div className="absolute top-[-20%] right-[-10%] w-[80vw] h-[80vw] bg-electric-indigo/20 blur-[120px] rounded-full mix-blend-screen opacity-40 animate-pulse" />
+        <div className="absolute bottom-[-20%] left-[-10%] w-[60vw] h-[60vw] bg-acid-lime/10 blur-[100px] rounded-full mix-blend-overlay opacity-30" />
       </div>
 
-      {/* Content - Mobile-first optimized */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 md:pt-32 pb-8 md:pb-20">
-        <div className="flex flex-col items-center justify-center gap-6 md:flex-row md:items-center md:justify-between md:gap-12">
-          {/* Text Content - Mobile optimized */}
-          <div className="flex-1 text-center md:text-left w-full">
-            <div>
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-semibold mb-3 md:mb-6">
-                <span className="block text-slate-200">Hi, I'm Syril 👋</span>
-                <span className="block bg-gradient-to-r from-cyan-500 to-teal-500 bg-clip-text text-transparent mt-1 md:mt-2">Syril Sibi</span>
-              </h1>
+      <div className="relative z-10 w-full max-w-[1600px] mx-auto flex flex-col justify-center h-full">
+        {/* Role Label */}
+        <motion.div
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+          className="flex items-center gap-3 mb-4 md:mb-8"
+        >
+          <span className="h-[1px] w-8 md:w-16 bg-acid-lime/60"></span>
+          <span className="font-body text-acid-lime tracking-widest uppercase text-xs md:text-sm font-semibold">
+            Machine Learning Engineer Intern
+          </span>
+        </motion.div>
 
-              <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-slate-400 mb-2 md:mb-4 font-medium">
-                Machine Learning Engineer Intern 🤖
-              </p>
+        {/* MEGA TYPE */}
+        <div className="relative leading-[0.85] tracking-tighter">
+          <motion.h1
+            style={{ y: shouldReduceMotion ? 0 : y1 }}
+            className="font-display text-[15vw] md:text-[12vw] font-bold text-transparent bg-clip-text bg-gradient-to-br from-white via-white to-white/50"
+          >
+            SYRIL
+          </motion.h1>
+          <motion.h1
+            style={{ y: shouldReduceMotion ? 0 : y2 }}
+            className="font-display text-[15vw] md:text-[12vw] font-bold text-transparent bg-clip-text bg-gradient-to-br from-white/90 via-white/50 to-transparent ml-[8vw] md:ml-[12vw]"
+          >
+            SIBI
+          </motion.h1>
 
-              <p className="text-sm sm:text-base md:text-lg text-slate-400 mb-6 md:mb-12 max-w-2xl mx-auto md:mx-0 leading-relaxed">
-                Building intelligent systems with Python, Django & Deep Learning 🧠
-              </p>
-
-              <div className="flex flex-col gap-2.5 w-full sm:flex-row sm:justify-center md:justify-start sm:w-auto">
-                <Button
-                  href="#projects"
-                  variant="primary"
-                  className="w-full sm:w-auto"
-                >
-                  🚀 View Projects
-                </Button>
-                <Button
-                  href="https://linkedin.com/in/syril-sibi-37a823261"
-                  variant="secondary"
-                  external
-                  icon={FaLinkedin}
-                  className="w-full sm:w-auto"
-                >
-                  💼 LinkedIn
-                </Button>
-                <Button
-                  href="/SYRIL SIBI.pdf"
-                  variant="outline"
-                  external
-                  icon={FaFileDownload}
-                  className="w-full sm:w-auto"
-                >
-                  📄 Resume
-                </Button>
-              </div>
-            </div>
-          </div>
-
-          {/* Animated Character - Below on mobile, side on desktop */}
-          <div className="flex-1 flex justify-center md:justify-end w-full md:w-auto order-first md:order-last">
-            <div className="w-40 h-40 sm:w-56 sm:h-56 md:w-80 md:h-80">
-              <AnimatedCharacter />
-            </div>
+          <div className="absolute top-1/2 right-4 md:right-20 transform -translate-y-1/2 hidden md:block">
+            <AnimatedCharacter />
           </div>
         </div>
+
+        {/* Introduction & CTA */}
+        <div className="mt-8 md:mt-16 flex flex-col md:flex-row md:items-end justify-between gap-8">
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1 }}
+            className="font-body text-slate-400 text-sm md:text-lg max-w-xl leading-relaxed"
+          >
+            Building intelligent systems at the intersection of <span className="text-white font-medium">Django</span> and <span className="text-white font-medium">Deep Learning</span>.
+            Designing digital experiences that feel intuitive and alive.
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1.2 }}
+            className="flex flex-wrap gap-4"
+          >
+            <Button href="#projects" variant="primary" className="group">
+              <span>Explore Work</span>
+              <span className="group-hover:translate-x-1 transition-transform inline-block ml-1">→</span>
+            </Button>
+            <Button href="https://linkedin.com/in/syril-sibi-37a823261" variant="outline" external icon={FaLinkedin}>
+              Connect
+            </Button>
+          </motion.div>
+        </div>
       </div>
+
+      {/* Scroll Indicator */}
+      <motion.div
+        animate={{ y: [0, 10, 0] }}
+        transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute bottom-6 left-1/2 -translate-x-1/2 text-white/20"
+      >
+        <span className="block text-[10px] tracking-widest uppercase mb-2 text-center">Scroll</span>
+        <div className="w-[1px] h-8 bg-gradient-to-b from-acid-lime/0 via-acid-lime/50 to-acid-lime/0 mx-auto"></div>
+      </motion.div>
+
     </section>
   );
 };

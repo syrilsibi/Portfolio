@@ -13,25 +13,25 @@ const Contact = () => {
           ref={ref}
           className={`text-center transition-opacity duration-500 ${isVisible ? 'opacity-100' : 'opacity-0'}`}
         >
-          <h2 className="text-3xl md:text-4xl font-semibold mb-4 md:mb-5 bg-gradient-to-r from-cyan-500 to-teal-500 bg-clip-text text-transparent">
-            📬 Contact
+          <h2 className="text-3xl md:text-5xl font-display font-medium mb-4 md:mb-5 text-slate-100">
+            CONTACT<span className="text-acid-lime">.</span>
           </h2>
-          
+
           <p className="text-xs text-slate-400 mb-5 md:mb-6 leading-relaxed">
-            I'm always open to discussing new opportunities, interesting projects, 
-            or just having a conversation about machine learning and technology. 
+            I'm always open to discussing new opportunities, interesting projects,
+            or just having a conversation about machine learning and technology.
             Feel free to reach out!
           </p>
 
           <div className="mb-5 md:mb-6 space-y-1.5 md:space-y-2">
             <p className="text-xs text-slate-300">
-              <span className="text-cyan-400/80">Location:</span> {personal.location}
+              <span className="text-acid-lime">Location:</span> {personal.location}
             </p>
             <p className="text-xs text-slate-300">
-              <span className="text-cyan-400/80">Email:</span>{' '}
-              <a 
+              <span className="text-acid-lime">Email:</span>{' '}
+              <a
                 href={`mailto:${personal.email}`}
-                className="text-cyan-400/80 hover:text-cyan-400 transition-colors duration-200"
+                className="text-slate-300 hover:text-white transition-colors duration-200 decoration-acid-lime underline underline-offset-4"
               >
                 {personal.email}
               </a>

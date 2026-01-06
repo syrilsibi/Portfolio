@@ -15,8 +15,6 @@ const Navbar = () => {
     { label: 'Skills', href: '#skills' },
     { label: 'Projects', href: '#projects' },
     { label: 'Experience', href: '#experience' },
-    { label: 'Education', href: '#education' },
-    { label: 'Certifications', href: '#certifications' },
     { label: 'Contact', href: '#contact' },
   ];
 
@@ -70,12 +68,13 @@ const Navbar = () => {
       <motion.nav
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.4, ease: 'easeOut' }}
-        className={`fixed top-0 left-0 right-0 z-30 transition-all duration-300 h-16 md:h-20 ${
-          scrolled ? 'bg-[#0b0f14]/60 backdrop-blur-sm border-b border-white/5' : 'bg-transparent'
-        }`}
+        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 h-16 md:h-24 ${scrolled
+            ? 'bg-deep-void/80 backdrop-blur-md border-b border-white/5'
+            : 'bg-transparent border-b border-transparent'
+          }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
+        <div className="max-w-[1600px] mx-auto px-4 sm:px-8 h-full">
           <div className="flex items-center justify-between h-full">
             <motion.a
               href="#hero"
@@ -83,49 +82,47 @@ const Navbar = () => {
                 e.preventDefault();
                 handleNavClick('#hero');
               }}
-              className="text-xl md:text-2xl font-semibold bg-gradient-to-r from-cyan-500 to-teal-500 bg-clip-text text-transparent cursor-pointer"
-              whileHover={{ y: -1 }}
-              transition={{ duration: 0.25, ease: 'easeOut' }}
+              className="group font-display text-xl md:text-2xl font-bold text-slate-100 tracking-tighter"
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.2 }}
             >
-              Syril Sibi
+              SYRIL<span className="text-acid-lime">.</span>
             </motion.a>
 
-            <div className="hidden lg:flex items-center gap-6">
+            <div className="hidden lg:flex items-center gap-8">
               {navItems.map((item) => (
-                <motion.a
-                  key={item.href}
-                  href={item.href}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleNavClick(item.href);
-                  }}
-                  className={`text-sm font-medium transition-colors relative ${
-                    activeSection === item.href
-                      ? 'text-cyan-400'
-                      : 'text-slate-400 hover:text-slate-200'
-                  }`}
-                  whileHover={{ y: -1 }}
-                  transition={{ duration: 0.25, ease: 'easeOut' }}
-                >
-                  {item.label}
+                <div key={item.href} className="relative">
+                  <motion.a
+                    href={item.href}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleNavClick(item.href);
+                    }}
+                    className={`text-sm font-body tracking-wide transition-colors duration-300 ${activeSection === item.href
+                        ? 'text-acid-lime'
+                        : 'text-slate-400 hover:text-white'
+                      }`}
+                  >
+                    {item.label}
+                  </motion.a>
                   {activeSection === item.href && (
                     <motion.div
                       layoutId="activeSection"
-                      className="absolute -bottom-1 left-0 right-0 h-px bg-gradient-to-r from-cyan-500/80 to-teal-500/80"
+                      className="absolute -bottom-1 left-0 right-0 h-[1px] bg-acid-lime"
                       initial={false}
-                      transition={{ type: 'tween', duration: 0.3, ease: 'easeOut' }}
+                      transition={{ type: 'spring', stiffness: 380, damping: 30 }}
                     />
                   )}
-                </motion.a>
+                </div>
               ))}
             </div>
 
             <button
               onClick={toggle}
-              className="lg:hidden p-2 rounded-lg hover:bg-white/10 transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center"
+              className="lg:hidden p-2 text-slate-200 hover:text-acid-lime transition-colors"
               aria-label="Toggle menu"
             >
-              <FaBars className="w-6 h-6 text-slate-200" />
+              <FaBars className="w-6 h-6" />
             </button>
           </div>
         </div>

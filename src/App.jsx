@@ -8,21 +8,25 @@ import Education from './sections/Education';
 import Certifications from './sections/Certifications';
 import Contact from './sections/Contact';
 
+import { ReactLenis } from '@studio-freight/react-lenis';
+
 function App() {
   return (
-    <div className="min-h-screen">
-      <Navbar />
-      <main>
-        <Hero />
-        <About />
-        <Skills />
-        <Projects />
-        <Experience />
-        <Education />
-        <Certifications />
-        <Contact />
-      </main>
-    </div>
+    <ReactLenis root>
+      <div className="min-h-screen">
+        <Navbar />
+        <main>
+          <Hero />
+          <About />
+          <Skills />
+          <Projects />
+          <Experience />
+          <Education />
+          <Certifications />
+          <Contact />
+        </main>
+      </div>
+    </ReactLenis>
   );
 }
 

@@ -5,13 +5,13 @@ const SkillCard = ({ skill, index }) => {
 
   return (
     <motion.div
-      whileHover={shouldReduceMotion ? {} : { 
+      whileHover={shouldReduceMotion ? {} : {
         y: -2,
         transition: { duration: 0.25, ease: 'easeOut' }
       }}
-      className="flex items-center gap-2 px-3 py-2 bg-white/5 border border-white/5 rounded-lg hover:border-cyan-500/30 hover:bg-white/10 transition-all duration-200 group"
+      className="flex items-center gap-3 px-4 py-3 bg-white/5 border border-white/5 rounded-lg hover:border-acid-lime/50 hover:bg-white/10 transition-all duration-200 group"
     >
-      <span className="text-sm text-cyan-400/70 group-hover:text-cyan-400 transition-colors duration-200">
+      <span className="text-sm text-slate-400 group-hover:text-acid-lime transition-colors duration-200">
         {skill.icon}
       </span>
       <div className="flex-1 min-w-0">
