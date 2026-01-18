@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
-import { motion } from 'framer-motion';
-import { FaBars } from 'react-icons/fa';
+import { motion, AnimatePresence } from 'framer-motion';
+import { FaBars, FaTimes } from 'react-icons/fa';
 import { useMobileMenu } from '../hooks/useMobileMenu';
 import MobileMenu from './MobileMenu';
 
@@ -69,61 +69,104 @@ const Navbar = () => {
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 h-16 md:h-24 ${scrolled
-            ? 'bg-deep-void/80 backdrop-blur-md border-b border-white/5'
-            : 'bg-transparent border-b border-transparent'
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled
+            ? 'py-3 bg-deep-void/80 backdrop-blur-xl border-b border-white/5 shadow-lg shadow-black/10'
+            : 'py-5 bg-transparent border-b border-transparent'
           }`}
       >
-        <div className="max-w-[1600px] mx-auto px-4 sm:px-8 h-full">
-          <div className="flex items-center justify-between h-full">
+        <div className="max-w-[1600px] mx-auto px-4 sm:px-8">
+          <div className="flex items-center justify-between">
+            {/* Logo */}
             <motion.a
               href="#hero"
               onClick={(e) => {
                 e.preventDefault();
                 handleNavClick('#hero');
               }}
-              className="group font-display text-xl md:text-2xl font-bold text-slate-100 tracking-tighter"
-              whileHover={{ scale: 1.05 }}
+              className="group font-display text-xl md:text-2xl font-bold text-slate-100 tracking-tighter relative"
+              whileHover={{ scale: 1.02 }}
               transition={{ duration: 0.2 }}
             >
-              SYRIL<span className="text-acid-lime">.</span>
+              <span className="relative z-10">SYRIL</span>
+              <span className="text-acid-lime relative z-10">.</span>
+              <motion.span 
+                className="absolute -inset-2 bg-acid-lime/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-0"
+                layoutId="logoHover"
+              />
             </motion.a>
 
-            <div className="hidden lg:flex items-center gap-8">
-              {navItems.map((item) => (
-                <div key={item.href} className="relative">
+            {/* Desktop Nav */}
+            <div className="hidden lg:flex items-center gap-1">
+              {navItems.map((item, index) => (
+                <motion.div 
+                  key={item.href} 
+                  className="relative"
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.1 + index * 0.05 }}
+                >
                   <motion.a
                     href={item.href}
                     onClick={(e) => {
                       e.preventDefault();
                       handleNavClick(item.href);
                     }}
-                    className={`text-sm font-body tracking-wide transition-colors duration-300 ${activeSection === item.href
+                    className={`
+                      relative px-4 py-2 text-sm font-medium tracking-wide rounded-lg
+                      transition-colors duration-300
+                      ${activeSection === item.href
                         ? 'text-acid-lime'
                         : 'text-slate-400 hover:text-white'
-                      }`}
+                      }
+                    `}
+                    whileHover={{ y: -2 }}
+                    transition={{ duration: 0.2 }}
                   >
                     {item.label}
+                    {activeSection === item.href && (
+                      <motion.div
+                        layoutId="activeNavBg"
+                        className="absolute inset-0 bg-acid-lime/10 rounded-lg -z-10"
+                        initial={false}
+                        transition={{ type: 'spring', stiffness: 380, damping: 30 }}
+                      />
+                    )}
                   </motion.a>
-                  {activeSection === item.href && (
-                    <motion.div
-                      layoutId="activeSection"
-                      className="absolute -bottom-1 left-0 right-0 h-[1px] bg-acid-lime"
-                      initial={false}
-                      transition={{ type: 'spring', stiffness: 380, damping: 30 }}
-                    />
-                  )}
-                </div>
+                </motion.div>
               ))}
             </div>
 
-            <button
+            {/* Mobile Menu Button */}
+            <motion.button
               onClick={toggle}
-              className="lg:hidden p-2 text-slate-200 hover:text-acid-lime transition-colors"
+              className="lg:hidden p-2.5 rounded-xl text-slate-200 hover:text-acid-lime hover:bg-white/5 transition-all duration-300"
               aria-label="Toggle menu"
+              whileTap={{ scale: 0.95 }}
             >
-              <FaBars className="w-6 h-6" />
-            </button>
+              <AnimatePresence mode="wait">
+                {isOpen ? (
+                  <motion.div
+                    key="close"
+                    initial={{ rotate: -90, opacity: 0 }}
+                    animate={{ rotate: 0, opacity: 1 }}
+                    exit={{ rotate: 90, opacity: 0 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <FaTimes className="w-5 h-5" />
+                  </motion.div>
+                ) : (
+                  <motion.div
+                    key="menu"
+                    initial={{ rotate: 90, opacity: 0 }}
+                    animate={{ rotate: 0, opacity: 1 }}
+                    exit={{ rotate: -90, opacity: 0 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <FaBars className="w-5 h-5" />
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </motion.button>
           </div>
         </div>
       </motion.nav>
