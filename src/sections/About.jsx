@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import AnimatedCounter from '../components/AnimatedCounter';
 import { FaMapMarkerAlt, FaBriefcase, FaGraduationCap, FaCode } from 'react-icons/fa';
+import { projects } from '../data/projects';
 
 const BentoCard = ({ children, className = '', delay = 0, span = '' }) => (
   <motion.div
@@ -27,7 +28,7 @@ const About = () => {
   const [ref, isVisible] = useScrollAnimation({ threshold: 0.1 });
 
   const stats = [
-    { value: 6, suffix: '+', label: 'Projects', icon: FaCode },
+    { value: projects.length, suffix: '+', label: 'Projects', icon: FaCode },
     { value: 1, suffix: '+', label: 'Year Exp', icon: FaBriefcase },
     { value: 5, suffix: '+', label: 'Technologies', icon: FaGraduationCap },
   ];

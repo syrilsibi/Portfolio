@@ -1,7 +1,7 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 import { projects } from '../data/projects';
-import { FaGithub, FaExternalLinkAlt, FaFire, FaUtensils, FaShoppingCart, FaCar } from 'react-icons/fa';
+import { FaGithub, FaExternalLinkAlt, FaFire, FaUtensils, FaShoppingCart, FaCar, FaCamera, FaShieldAlt } from 'react-icons/fa';
 
 // Icon mapping for projects
 const projectIcons = {
@@ -9,6 +9,8 @@ const projectIcons = {
   2: FaUtensils,
   3: FaShoppingCart,
   4: FaCar,
+  5: FaCamera,
+  6: FaShieldAlt,
 };
 
 const TimelineItem = ({ project, index, isLeft }) => {

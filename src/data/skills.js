@@ -26,12 +26,14 @@ export const skills = {
     { name: 'RNN', icon: '🔄', learning: true },
     { name: 'YOLOv8', icon: '👁️' },
     { name: 'PyTorch', icon: '🔥' },
+    { name: 'TensorFlow / Keras', icon: '🅰️' },
   ],
   mlLibraries: [
     { name: 'NumPy', icon: '🔢' },
     { name: 'Pandas', icon: '🐼' },
     { name: 'Matplotlib', icon: '📈' },
     { name: 'Scikit-learn', icon: '🔬' },
+    { name: 'Seaborn', icon: '🌊' },
   ],
   databases: [
     { name: 'MySQL', icon: '🗄️' },

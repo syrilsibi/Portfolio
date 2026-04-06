@@ -4,7 +4,7 @@ export const experience = [
     type: 'internship',
     title: 'Machine Learning Engineer Intern',
     company: 'SkillPark',
-    location: 'Remote',
+    location: 'Kalamassery',
     period: 'Current',
     description: 'Working on machine learning projects and developing intelligent systems.',
     current: true,

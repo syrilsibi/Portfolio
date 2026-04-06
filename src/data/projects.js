@@ -1,5 +1,23 @@
 export const projects = [
   {
+    id: 5,
+    title: 'Smart Classroom Attendance System',
+    description: 'AI-powered computer vision application for automated student attendance tracking using real-time facial recognition.',
+    techStack: ['Python', 'Streamlit', 'OpenCV', 'MTCNN', 'FaceNet'],
+    featured: true,
+    github: 'https://github.com/syrilsibi/Smart_Classroom_.git',
+    demo: '#',
+  },
+  {
+    id: 6,
+    title: 'Hostel AI Monitoring System',
+    description: 'AI surveillance system to monitor student movement during restricted hours using real-time facial recognition.',
+    techStack: ['Python', 'Streamlit', 'OpenCV', 'MTCNN', 'FaceNet'],
+    featured: true,
+    github: 'https://github.com/syrilsibi/HOSTEL-MANAGEMENT-SYSTEM.git',
+    demo: '#',
+  },
+  {
     id: 1,
     title: 'Fire Detection System',
     description: 'Real-time fire detection using YOLOv8. Live video analysis using OpenCV. Dataset preprocessing and model training. Email and alarm alert generation.',

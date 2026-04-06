@@ -1,5 +1,35 @@
 export const certifications = [
   {
+    id: 8,
+    title: 'AWS Cloud Practitioner Essentials',
+    issuer: 'Coursera',
+    period: '2025',
+  },
+  {
+    id: 9,
+    title: 'Deep Learning & Neural Networks with Keras',
+    issuer: 'IBM (Coursera)',
+    period: '2025',
+  },
+  {
+    id: 10,
+    title: 'Generative AI: Prompt Engineering Basics',
+    issuer: 'Coursera',
+    period: '2025',
+  },
+  {
+    id: 11,
+    title: 'Fundamentals of AI Agents Using RAG and LangChain',
+    issuer: 'Coursera',
+    period: '2025',
+  },
+  {
+    id: 12,
+    title: 'Generative AI Engineering and Fine-Tuning Transformers',
+    issuer: 'Coursera',
+    period: '2025',
+  },
+  {
     id: 1,
     title: 'Internship Certificate',
     issuer: 'Wahy Lab Solutions',
