@@ -10,6 +10,8 @@ import Education from './sections/Education';
 import Certifications from './sections/Certifications';
 import Contact from './sections/Contact';
 
+import ScrollToTop from './components/ScrollToTop';
+
 import { ReactLenis } from '@studio-freight/react-lenis';
 
 function App() {
@@ -17,6 +19,7 @@ function App() {
     <ReactLenis root options={{ lerp: 0.1, duration: 1.5, smoothWheel: true }}>
       <div className="min-h-screen relative">
         <ScrollProgress />
+        <ScrollToTop />
         <CursorGlow />
         <Navbar />
         <main>
