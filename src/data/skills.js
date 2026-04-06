@@ -20,6 +20,8 @@ export const skills = {
     { name: 'Logistic Regression', icon: '📊' },
     { name: 'SVM', icon: '🤖' },
     { name: 'KNN', icon: '🔍' },
+    { name: 'NLP', icon: '🗣️' },
+    { name: 'Transformers', icon: '🤖' },
   ],
   deepLearning: [
     { name: 'CNN', icon: '🧠', learning: true },
@@ -45,6 +47,8 @@ export const skills = {
     { name: 'PyCharm', icon: '🐍' },
     { name: 'Google Colab', icon: '☁️' },
     { name: 'Jupyter Notebook', icon: '📓' },
+    { name: 'AWS', icon: '☁️' },
+    { name: 'ETL', icon: '🔄' },
   ],
   operatingSystems: [
     { name: 'Windows', icon: '🪟' },

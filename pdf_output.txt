@@ -1,0 +1,90 @@
+   
+Contact
+kalapurayil (H)
+9539411880  (Home)
+syrilsibi106@gmail.com
+www.linkedin.com/in/syril-sibi-aug5
+(LinkedIn)
+github.com/syrilsibi  (Other)
+Top Skills
+NLP
+Extract, Transform, Load (ETL)
+Transformers
+Certifications
+Cybersecurity Fundamentals
+Fundamentals of AI Agents Using
+RAG and LangChain
+AI Agents Using RAG and
+LangChain
+Generative AI: Prompt Engineering
+Basics
+Artificial Intelligence FundamentalsSyril Sibi
+Machine Learning Engineer | Deep Learning & Computer Vision |
+Python, PyTorch, AWS | Building Real-World AI Systems
+Idukki, Kerala, India
+Summary
+Organizations and product teams often struggle to turn data into
+practical AI solutions, resulting in manual work, slow decision-
+making, and missed automation opportunities.
+I work as a Machine Learning Engineer, helping teams build real-
+world AI systems that automate processes and deliver actionable
+insights through end-to-end model development and deployment.
+My background includes hands-on experience as an AI/ML intern,
+where I built a real-time fire detection system using YOLOv8 and
+developed machine learning solutions using Python, PyTorch, and
+modern deep learning frameworks. I have worked across the full
+pipeline—from data preprocessing and model training to real-time
+inference and integration—gaining practical exposure to Computer
+Vision and applied machine learning.
+I believe AI should solve real problems, not just achieve high
+accuracy, and I focus on building simple, reliable systems that create
+measurable value in real-world environments.
+Currently open to full-time opportunities in Machine Learning, AI, and
+Computer Vision roles. Best way to connect: LinkedIn DM or email at
+syrilsibi106@gmail.com
+Experience
+skillpark
+AI / Machine Learning Intern
+September 2025 - Present  (8 months)
+Kochi
+-> Working on applied Python-based data analysis and machine learning
+workflows using NumPy, Pandas, and Matplotlib
+  Page 1 of 3\n   
+-> Implemented and evaluated supervised ML models including Logistic
+Regression, SVM, KNN, Decision Trees, and Random Forests
+-> Performed data preprocessing, feature engineering, and model evaluation
+on structured datasets
+-> Actively building foundations in Deep Learning concepts (CNNs, RNNs)
+using TensorFlow/Keras
+-> Gaining hands-on exposure to end-to-end ML pipelines, from data handling
+to model training and analysis
+Skills: Python · Machine Learning · Data Analysis · NumPy · Pandas ·
+TensorFlow
+WAHY LAB SOLUTIONS
+Intern
+January 2025 - April 2025  (4 months)
+Kochi, Kerala, India
+Developed an AI-powered real-time Fire Detection System using YOLOv8 and
+Python Django.
+Key responsibilities included:
+-> Building modules for live camera stream access, model training,
+deployment, and alert systems
+-> Training a custom fire detection model on Google Colab with curated
+datasets
+->Integrating real-time video processing and alert mechanisms to reduce false
+alarms and improve emergency response
+Gained strong hands-on experience in deep learning, computer vision, and
+full-stack deployment.
+Education
+Union Christian College Aluva
+Master of Computer Applications - MCA, Computer Programming, Specific
+Applications  · (September 2023 - April 2025)
+N.S.S College, Rajakumari, Kulapparachal P.O. 685 619
+Bachelor of computer applications, Computer Programming  · (June
+2020 - April 2023)
+SXHSS CHEMMENAR 
+  Page 2 of 3\n   
+12, Pure science  · (June 2018 - March 2020)
+SSHS KANTHIPARA
+SSLC   · (June 2017 - March 2018)
+  Page 3 of 3

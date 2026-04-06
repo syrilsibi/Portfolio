@@ -70,21 +70,20 @@ const About = () => {
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold text-white">Syril Sibi</h3>
-                  <p className="text-sm text-acid-lime">ML Engineer Intern</p>
+                  <p className="text-sm text-acid-lime">Machine Learning Engineer</p>
                 </div>
               </div>
               <p className="text-slate-400 leading-relaxed mb-4">
-                I'm an MCA student with a passion for machine learning and artificial intelligence. 
-                Currently working as a Machine Learning Engineer Intern at SkillPark, where I'm 
-                applying my knowledge to real-world projects.
+                I work as a Machine Learning Engineer helping teams build real-world AI systems that automate processes 
+                and deliver actionable insights through end-to-end model development and deployment.
               </p>
               <p className="text-slate-400 leading-relaxed mb-4">
-                I have hands-on experience with traditional ML algorithms including SVM, Logistic 
-                Regression, and KNN. Currently expanding into deep learning with CNN and RNN architectures.
+                My background includes hands-on experience building systems like a real-time fire detection model using YOLOv8, 
+                and working with modern deep learning frameworks across the full pipeline—from data preprocessing to real-time inference.
               </p>
               <div className="mt-auto pt-4 border-t border-white/5">
                 <p className="text-sm text-slate-500">
-                  Fascinated by how neural networks can learn complex patterns and solve challenging problems.
+                  I believe AI should solve real problems, focusing on creating simple, reliable systems that deliver measurable value.
                 </p>
               </div>
             </div>
@@ -134,7 +133,7 @@ const About = () => {
             <div className="p-6 h-full">
               <h3 className="text-sm font-medium text-slate-400 mb-4">Core Stack</h3>
               <div className="flex flex-wrap gap-2">
-                {['Python', 'Django', 'PyTorch', 'TensorFlow'].map((tech) => (
+                {['Python', 'Django', 'PyTorch', 'TensorFlow', 'AWS', 'NLP'].map((tech) => (
                   <span 
                     key={tech}
                     className="px-3 py-1.5 text-xs font-medium bg-white/5 border border-white/10 rounded-lg text-slate-300"
